@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // backgrounds
         main: 'hsl(222, 26%, 31%)',
         keypad: 'hsl(223, 31%, 20%)',
         screen: 'hsl(224, 36%, 15%)',
