@@ -3,11 +3,23 @@ import './App.css'
 
 function App() {
   const [displayNum, setDisplayNum] = useState('')
+  const [calcArr, setCalcArr] = useState([])
   const [count, setCount] = useState(0)
 
   const handleNumChange = (e) => {
     const num = e.target.value;
     setDisplayNum(displayNum + num);
+  }
+
+  const handleOperator = (e) => {
+    const operator = e.target.value;
+    setCalcArr([...calcArr, displayNum, operator]);
+    setDisplayNum('');
+  }
+
+  const handleReset = () => {
+    setDisplayNum('');
+    setCalcArr([]);
   }
 
   return (
@@ -33,16 +45,16 @@ function App() {
           <button value='4' onClick={handleNumChange} className='bg-keyLightGray'>4</button>
           <button value='5' onClick={handleNumChange} className='bg-keyLightGray'>5</button>
           <button value='6' onClick={handleNumChange} className='bg-keyLightGray'>6</button>
-          <button value='+' className='bg-keyLightGray'>+</button>
+          <button value='+' onClick={handleOperator} className='bg-keyLightGray'>+</button>
           <button value='1' onClick={handleNumChange} className='bg-keyLightGray'>1</button>
           <button value='2' onClick={handleNumChange} className='bg-keyLightGray'>2</button>
           <button value='3' onClick={handleNumChange} className='bg-keyLightGray'>3</button>
-          <button value='-' className='bg-keyLightGray'>-</button>
+          <button value='-' onClick={handleOperator} className='bg-keyLightGray'>-</button>
           <button value='.' onClick={handleNumChange} className='bg-keyLightGray'>.</button>
           <button value='0' onClick={handleNumChange} className='bg-keyLightGray'>0</button>
-          <button value='/' className='bg-keyLightGray'>/</button>
-          <button value='x' className='bg-keyLightGray'>x</button>
-          <button onClick={() => setDisplayNum('')} className='col-span-2 bg-keyBg text-white'>RESET</button>
+          <button value='/' onClick={handleOperator} className='bg-keyLightGray'>/</button>
+          <button value='x' onClick={handleOperator} className='bg-keyLightGray'>x</button>
+          <button onClick={handleReset} className='col-span-2 bg-keyBg text-white'>RESET</button>
           <button value='=' className='col-span-2 bg-keyRed text-white'>=</button>
         </div>
       </div>
