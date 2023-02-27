@@ -2,7 +2,17 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [displayNum, setDisplayNum] = useState('')
   const [count, setCount] = useState(0)
+
+  const handleNumChange = (e) => {
+    const num = e.target.value;
+    setDisplayNum(displayNum + num);
+  }
+
+  const handleReset = () => {
+    setDisplayNum('');
+  }
 
   return (
     <div className='App bg-teal-400 w-screen h-screen'>
@@ -18,26 +28,26 @@ function App() {
             </div>
           </div>
         </header>
-        <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-2 font-bold text-4xl'>{count}</div>
+        <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-2 font-bold text-4xl'>{displayNum ? displayNum : '0'}</div>
         <div id='num-buttons' className='grid grid-cols-4 text-black font-bold place-items-center justify-items-stretch gap-3 bg-keypad p-4'>
-          <button id='7' className='bg-keyLightGray'>7</button>
-          <button id='8' className='bg-keyLightGray'>8</button>
-          <button id='9' className='bg-keyLightGray'>9</button>
-          <button id='DEL' className='bg-keyBg text-white'>DEL</button>
-          <button id='4' className='bg-keyLightGray'>4</button>
-          <button id='5' className='bg-keyLightGray'>5</button>
-          <button id='6' className='bg-keyLightGray'>6</button>
-          <button id='+' className='bg-keyLightGray'>+</button>
-          <button id='1' className='bg-keyLightGray'>1</button>
-          <button id='2' className='bg-keyLightGray'>2</button>
-          <button id='3' className='bg-keyLightGray'>3</button>
-          <button id='-' className='bg-keyLightGray'>-</button>
-          <button id='.' className='bg-keyLightGray'>.</button>
-          <button id='0' className='bg-keyLightGray'>0</button>
-          <button id='/' className='bg-keyLightGray'>/</button>
-          <button id='x' className='bg-keyLightGray'>x</button>
-          <button id='RESET' className='col-span-2 bg-keyBg text-white'>RESET</button>
-          <button id='=' className='col-span-2 bg-keyRed text-white'>=</button>
+          <button value='7' onClick={handleNumChange} className='bg-keyLightGray'>7</button>
+          <button value='8' onClick={handleNumChange} className='bg-keyLightGray'>8</button>
+          <button value='9' onClick={handleNumChange} className='bg-keyLightGray'>9</button>
+          <button value='DEL' className='bg-keyBg text-white'>DEL</button>
+          <button value='4' onClick={handleNumChange} className='bg-keyLightGray'>4</button>
+          <button value='5' onClick={handleNumChange} className='bg-keyLightGray'>5</button>
+          <button value='6' onClick={handleNumChange} className='bg-keyLightGray'>6</button>
+          <button value='+' className='bg-keyLightGray'>+</button>
+          <button value='1' onClick={handleNumChange} className='bg-keyLightGray'>1</button>
+          <button value='2' onClick={handleNumChange} className='bg-keyLightGray'>2</button>
+          <button value='3' onClick={handleNumChange} className='bg-keyLightGray'>3</button>
+          <button value='-' className='bg-keyLightGray'>-</button>
+          <button value='.' onClick={handleNumChange} className='bg-keyLightGray'>.</button>
+          <button value='0' onClick={handleNumChange} className='bg-keyLightGray'>0</button>
+          <button value='/' className='bg-keyLightGray'>/</button>
+          <button value='x' className='bg-keyLightGray'>x</button>
+          <button value='RESET' onClick={handleReset} className='col-span-2 bg-keyBg text-white'>RESET</button>
+          <button value='=' className='col-span-2 bg-keyRed text-white'>=</button>
         </div>
       </div>
     </div>
