@@ -23,8 +23,8 @@ function App() {
   }
 
   return (
-    <div className='App bg-teal-400 w-screen h-screen'>
-      <div id='calc' className='bg-main w-3/6 m-auto px-3 py-4 flex flex-col gap-y-4 max-w-sm'>
+    <div className='flex bg-teal-400 w-screen h-screen'>
+      <div id='calc' className='bg-main w-3/6 m-auto px-3 py-4 flex flex-col gap-y-4 max-w-sm rounded-lg'>
         <header className='flex justify-between items-center'>
           <h1 className='font-bold text-2xl'>calc</h1>
           <div id="theme-selector" className='flex gap-4 items-center'>
