@@ -10,10 +10,6 @@ function App() {
     setDisplayNum(displayNum + num);
   }
 
-  const handleReset = () => {
-    setDisplayNum('');
-  }
-
   return (
     <div className='App bg-teal-400 w-screen h-screen'>
       <div id='calc' className='bg-main w-3/6 m-auto px-3 py-4 flex flex-col gap-y-4 max-w-sm'>
@@ -46,7 +42,7 @@ function App() {
           <button value='0' onClick={handleNumChange} className='bg-keyLightGray'>0</button>
           <button value='/' className='bg-keyLightGray'>/</button>
           <button value='x' className='bg-keyLightGray'>x</button>
-          <button value='RESET' onClick={handleReset} className='col-span-2 bg-keyBg text-white'>RESET</button>
+          <button onClick={() => setDisplayNum('')} className='col-span-2 bg-keyBg text-white'>RESET</button>
           <button value='=' className='col-span-2 bg-keyRed text-white'>=</button>
         </div>
       </div>
