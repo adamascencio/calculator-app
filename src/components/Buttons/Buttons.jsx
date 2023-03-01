@@ -11,7 +11,6 @@ export default function Buttons ({ displayNum, setDisplayNum, calcArr, setCalcAr
       setResult(eval(calcArr.slice(0, -1).join('')))
       : 
       setResult(eval(calcArr.join('')))
-    setDisplayNum(result ? result.toString() : '');
   }, [calcArr]);
 
   // helper functions
@@ -63,7 +62,7 @@ export default function Buttons ({ displayNum, setDisplayNum, calcArr, setCalcAr
       <button value='/' onClick={handleNumChange} className='bg-keyLightGray'>/</button>
       <button value='*' onClick={handleNumChange} className='bg-keyLightGray'>x</button>
       <button value='RESET' onClick={handleReset} className='col-span-2 bg-keyBg text-white'>RESET</button>
-      <button value='=' className='col-span-2 bg-keyRed text-white'>=</button>
+      <button value='=' onClick={() => setCalcArr([...calcArr, displayNum])} className='col-span-2 bg-keyRed text-white'>=</button>
     </div>
   );
 }
