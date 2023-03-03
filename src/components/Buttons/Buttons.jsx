@@ -46,6 +46,10 @@ export default function Buttons ({ displayNum, setDisplayNum, calcArr, setCalcAr
     if (!OPERATORS.includes(char)) setDisplayNum(displayNum + char);
   }
 
+  const handleDelete = () => {
+    setDisplayNum(displayNum.slice(0, -1));
+  }
+
   const handleReset = () => {
     setDisplayNum('');
     setCalcArr([]);
@@ -64,7 +68,7 @@ export default function Buttons ({ displayNum, setDisplayNum, calcArr, setCalcAr
       <button value='7' onClick={handleNumChange} className='bg-keyLightGray'>7</button>
       <button value='8' onClick={handleNumChange} className='bg-keyLightGray'>8</button>
       <button value='9' onClick={handleNumChange} className='bg-keyLightGray'>9</button>
-      <button value='DEL' className='bg-keyBg text-white'>DEL</button>
+      <button value='DEL' onClick={handleDelete} className='bg-keyBg text-white'>DEL</button>
       <button value='4' onClick={handleNumChange} className='bg-keyLightGray'>4</button>
       <button value='5' onClick={handleNumChange} className='bg-keyLightGray'>5</button>
       <button value='6' onClick={handleNumChange} className='bg-keyLightGray'>6</button>
