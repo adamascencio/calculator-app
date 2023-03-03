@@ -14,15 +14,21 @@ export default function Buttons ({ displayNum, setDisplayNum, calcArr, setCalcAr
   }, [calcArr]);
 
   // helper functions
-  const checkForDecimal = (numStr) => {
+  const checkForDecimal = numStr => {
     const regex = /[.]+/g;
     return regex.test(numStr);
   }
 
+  const isDigit = char => {
+    const regex = /[0-9]+/g;
+    return regex.test(char);
+  }
+
   // event handlers
-  const handleNumChange = (e) => {
+  const handleNumChange = e => {
     const char = e.target.value;
     const lastChar = displayNum[displayNum.length - 1];
+    const lastArrIdx = calcArr.length - 1;
     if (
         OPERATORS.includes(char) && displayNum === '' ||
         OPERATORS.includes(char) && OPERATORS.includes(lastChar) ||
@@ -30,7 +36,10 @@ export default function Buttons ({ displayNum, setDisplayNum, calcArr, setCalcAr
     ) return;
 
     if (OPERATORS.includes(char)) {
-      setCalcArr([...calcArr, displayNum, char]) 
+      isDigit(calcArr[lastArrIdx]) ? 
+        setCalcArr([...calcArr, char, displayNum]) 
+        : 
+        setCalcArr([...calcArr, displayNum, char]) 
       setDisplayNum('');
     }
     
@@ -41,6 +50,13 @@ export default function Buttons ({ displayNum, setDisplayNum, calcArr, setCalcAr
     setDisplayNum('');
     setCalcArr([]);
     setResult(0);
+  }
+
+  const handleEquals = () => {
+    if (displayNum) {
+     setCalcArr([...calcArr, displayNum]); 
+     setDisplayNum('');
+    }
   }
 
   return (
@@ -62,7 +78,7 @@ export default function Buttons ({ displayNum, setDisplayNum, calcArr, setCalcAr
       <button value='/' onClick={handleNumChange} className='bg-keyLightGray'>/</button>
       <button value='*' onClick={handleNumChange} className='bg-keyLightGray'>x</button>
       <button value='RESET' onClick={handleReset} className='col-span-2 bg-keyBg text-white'>RESET</button>
-      <button value='=' onClick={() => setCalcArr([...calcArr, displayNum])} className='col-span-2 bg-keyRed text-white'>=</button>
+      <button value='=' onClick={handleEquals} className='col-span-2 bg-keyRed text-white'>=</button>
     </div>
   );
 }
