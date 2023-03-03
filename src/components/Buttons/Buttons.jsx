@@ -64,25 +64,25 @@ export default function Buttons ({ displayNum, setDisplayNum, calcArr, setCalcAr
   }
 
   return (
-    <div id='num-buttons' className='grid grid-cols-4 text-black font-bold place-items-center justify-items-stretch gap-3 bg-keypad p-4'>
-      <button value='7' onClick={handleNumChange} className='bg-keyLightGray'>7</button>
-      <button value='8' onClick={handleNumChange} className='bg-keyLightGray'>8</button>
-      <button value='9' onClick={handleNumChange} className='bg-keyLightGray'>9</button>
-      <button value='DEL' onClick={handleDelete} className='bg-keyBg text-white'>DEL</button>
-      <button value='4' onClick={handleNumChange} className='bg-keyLightGray'>4</button>
-      <button value='5' onClick={handleNumChange} className='bg-keyLightGray'>5</button>
-      <button value='6' onClick={handleNumChange} className='bg-keyLightGray'>6</button>
-      <button value='+' onClick={handleNumChange} className='bg-keyLightGray'>+</button>
-      <button value='1' onClick={handleNumChange} className='bg-keyLightGray'>1</button>
-      <button value='2' onClick={handleNumChange} className='bg-keyLightGray'>2</button>
-      <button value='3' onClick={handleNumChange} className='bg-keyLightGray'>3</button>
-      <button value='-' onClick={handleNumChange} className='bg-keyLightGray'>-</button>
-      <button value='.' onClick={handleNumChange} className='bg-keyLightGray'>.</button>
-      <button value='0' onClick={handleNumChange} className='bg-keyLightGray'>0</button>
-      <button value='/' onClick={handleNumChange} className='bg-keyLightGray'>/</button>
-      <button value='*' onClick={handleNumChange} className='bg-keyLightGray'>x</button>
-      <button value='RESET' onClick={handleReset} className='col-span-2 bg-keyBg text-white'>RESET</button>
-      <button value='=' onClick={handleEquals} className='col-span-2 bg-keyRed text-white'>=</button>
+    <div id='num-buttons' className='grid grid-cols-4 text-black font-bold place-items-center justify-items-stretch gap-3 bg-keypad p-4 rounded-lg'>
+      <button value='7' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>7</button>
+      <button value='8' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>8</button>
+      <button value='9' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>9</button>
+      <button value='DEL' onClick={handleDelete} className='bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>DEL</button>
+      <button value='4' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>4</button>
+      <button value='5' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>5</button>
+      <button value='6' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>6</button>
+      <button value='+' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>+</button>
+      <button value='1' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>1</button>
+      <button value='2' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>2</button>
+      <button value='3' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>3</button>
+      <button value='-' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>-</button>
+      <button value='.' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>.</button>
+      <button value='0' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>0</button>
+      <button value='/' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>/</button>
+      <button value='*' onClick={handleNumChange} className='bg-keyLightGray py-2 rounded-md shadow shadow-keyShadow '>x</button>
+      <button value='RESET' onClick={handleReset} className='col-span-2 bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>RESET</button>
+      <button value='=' onClick={handleEquals} className='col-span-2 bg-keyRed text-white py-2 rounded-md shadow shadow-keyShadow '>=</button>
     </div>
   );
 }
