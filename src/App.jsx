@@ -48,9 +48,9 @@ function calcReducer(state, { type, payload }) {
           }
       return {
         currentOperand: eval(`
-          ${state.previousOperand || ''} 
-          ${state.operation || ''} 
-          ${state.currentOperand || ''}
+          ${state.previousOperand} 
+          ${state.operation} 
+          ${state.currentOperand}
         `).toString(),
       }
   }
