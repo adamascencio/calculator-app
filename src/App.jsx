@@ -89,6 +89,15 @@ function calcReducer(state, { type, payload }) {
   }
 } 
 
+const INT_FORMATTER = new Intl.NumberFormat('en-US', {
+  maximumFractionDigits: 0,
+});
+
+function formatOperand(operand) {
+  if (!operand) return 
+  const [int, dec] = operand.split('.');
+  return dec ? `${INT_FORMATTER.format(int)}.${dec}` : INT_FORMATTER.format(int);
+}
 
 export default function App() {
   // state
@@ -99,7 +108,7 @@ export default function App() {
       <div id='calc' className='bg-main w-3/6 m-auto px-3 py-4 flex flex-col gap-y-4 max-w-sm rounded-lg min-w-fit'>
         <Header />
         <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-2 font-bold text-4xl'>
-          <span>{currentOperand ? currentOperand : '0'}</span>
+          <span>{currentOperand ? formatOperand(currentOperand) : '0'}</span>
         </div>
         <div id='keypad' className='grid grid-cols-4 text-keySize text-black font-bold place-items-center justify-items-stretch gap-3 bg-keypad p-4 rounded-lg'>
           <DigitButton digit='7' dispatch={dispatch} />
