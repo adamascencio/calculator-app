@@ -41,9 +41,11 @@ function calcReducer(state, { type, payload }) {
         currentOperand: state.currentOperand.slice(0, -1),
       }
     case 'evaluate':
-      if (!state.currentOperand || 
+      if (
+          !state.currentOperand || 
           !state.previousOperand || 
-          !state.operation) {
+          !state.operation
+         ) {
             return state
           }
       return {
