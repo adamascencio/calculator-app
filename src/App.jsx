@@ -23,6 +23,10 @@ function calcReducer(state, { type, payload }) {
       }
     case 'clear':
       return {}
+    case 'delete':
+      return {
+        currentOperand: state.currentOperand.slice(0, -1),
+      }
   }
 } 
 
@@ -42,7 +46,7 @@ export default function App() {
           <DigitButton digit='7' dispatch={dispatch} />
           <DigitButton digit='8' dispatch={dispatch} />
           <DigitButton digit='9' dispatch={dispatch} />
-          <button className='bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>DEL</button>
+          <button onClick={() => dispatch({ type: ACTIONS.DELETE })} className='bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>DEL</button>
           <DigitButton digit='4' dispatch={dispatch} />
           <DigitButton digit='5' dispatch={dispatch} />
           <DigitButton digit='6' dispatch={dispatch} />
