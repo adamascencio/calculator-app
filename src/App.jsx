@@ -76,8 +76,8 @@ function calcReducer(state, { type, payload }) {
           !state.previousOperand || 
           !state.operation
          ) {
-            return state
-          }
+          return state
+         }
       return {
         overwrite: true,
         currentOperand: eval(`
