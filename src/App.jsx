@@ -22,6 +22,13 @@ function calcReducer(state, { type, payload }) {
         currentOperand: `${state.currentOperand || ''}${payload.digit}`,
       }
     case 'choose-operation':
+      if (!state.currentOperand) {
+        return {
+          ...state,
+          operation: payload.operation,
+        }
+      }
+      
       return {
         currentOperand: '',
         previousOperand: state.currentOperand,
