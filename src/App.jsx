@@ -17,6 +17,20 @@ function calcReducer(state, { type, payload }) {
     case 'add-digit':
       if (payload.digit === '0' && state.currentOperand === '0') return state
       if (payload.digit === '.' && state.currentOperand.includes('.')) return state
+      if (state.overwrite) {
+        return {
+          currentOperand: payload.digit,
+          overwrite: false,
+        }
+      }
+      if (state.append) {
+        return {
+          ...state,
+          previousOperand: state.currentOperand,
+          currentOperand: payload.digit,
+          append: false,
+        }
+      }
       return {
         ...state,
         currentOperand: `${state.currentOperand || ''}${payload.digit}`,
@@ -28,10 +42,26 @@ function calcReducer(state, { type, payload }) {
           operation: payload.operation,
         }
       }
+
+      if (
+        state.currentOperand &&
+        state.previousOperand &&
+        state.operation
+      ) {
+        return {
+          append: true,
+          operation: payload.operation,
+          currentOperand: eval(`
+            ${state.previousOperand}
+            ${state.operation}
+            ${state.currentOperand}
+          `).toString(),
+        }
+      }
       
       return {
-        currentOperand: '',
         previousOperand: state.currentOperand,
+        currentOperand: '',
         operation: payload.operation,
       }
     case 'clear':
@@ -49,6 +79,7 @@ function calcReducer(state, { type, payload }) {
             return state
           }
       return {
+        overwrite: true,
         currentOperand: eval(`
           ${state.previousOperand} 
           ${state.operation} 
