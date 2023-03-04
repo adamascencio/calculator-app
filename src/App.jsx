@@ -21,11 +21,30 @@ function calcReducer(state, { type, payload }) {
         ...state,
         currentOperand: `${state.currentOperand || ''}${payload.digit}`,
       }
+    case 'choose-operation':
+      return {
+        currentOperand: '',
+        previousOperand: state.currentOperand,
+        operation: payload.operation,
+      }
     case 'clear':
       return {}
     case 'delete':
       return {
         currentOperand: state.currentOperand.slice(0, -1),
+      }
+    case 'evaluate':
+      if (!state.currentOperand || 
+          !state.previousOperand || 
+          !state.operation) {
+            return state
+          }
+      return {
+        currentOperand: eval(`
+          ${state.previousOperand || ''} 
+          ${state.operation || ''} 
+          ${state.currentOperand || ''}
+        `).toString(),
       }
   }
 } 
@@ -42,7 +61,7 @@ export default function App() {
         <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-2 font-bold text-4xl'>
           <span>{currentOperand ? currentOperand : '0'}</span>
         </div>
-        <div id='keypad' className='grid grid-cols-4 text-black font-bold place-items-center justify-items-stretch gap-3 bg-keypad p-4 rounded-lg'>
+        <div id='keypad' className='grid grid-cols-4 text-2xl text-black font-bold place-items-center justify-items-stretch gap-3 bg-keypad p-4 rounded-lg'>
           <DigitButton digit='7' dispatch={dispatch} />
           <DigitButton digit='8' dispatch={dispatch} />
           <DigitButton digit='9' dispatch={dispatch} />
@@ -60,7 +79,7 @@ export default function App() {
           <OperationButton operation='/' dispatch={dispatch} />
           <OperationButton operation='*' dispatch={dispatch} />
           <button onClick={() => dispatch({ type: ACTIONS.CLEAR })} className='col-span-2 bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>RESET</button>
-          <button className='col-span-2 bg-keyRed text-white py-2 rounded-md shadow shadow-keyShadow'>=</button>
+          <button onClick={() => dispatch({ type: ACTIONS.EVALUATE })} className='col-span-2 bg-keyRed text-white py-2 rounded-md shadow shadow-keyShadow'>=</button>
         </div>
       </div>
     </div>
