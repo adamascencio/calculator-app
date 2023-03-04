@@ -22,6 +22,9 @@ module.exports = {
         darkGray: 'hsl(221, 14%, 31%)',
         white: 'hsl(0, 0%, 100%)',
       },
+      fontSize: {
+        keySize: 'clamp(1rem, 1.5vw, 1.5rem)',
+      }
     },
   },
   plugins: [],

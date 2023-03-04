@@ -61,7 +61,7 @@ export default function App() {
         <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-2 font-bold text-4xl'>
           <span>{currentOperand ? currentOperand : '0'}</span>
         </div>
-        <div id='keypad' className='grid grid-cols-4 text-2xl text-black font-bold place-items-center justify-items-stretch gap-3 bg-keypad p-4 rounded-lg'>
+        <div id='keypad' className='grid grid-cols-4 text-keySize text-black font-bold place-items-center justify-items-stretch gap-3 bg-keypad p-4 rounded-lg'>
           <DigitButton digit='7' dispatch={dispatch} />
           <DigitButton digit='8' dispatch={dispatch} />
           <DigitButton digit='9' dispatch={dispatch} />
