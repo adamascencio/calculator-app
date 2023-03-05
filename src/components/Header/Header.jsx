@@ -14,7 +14,7 @@ export default function Header () {
             min='1'
             max='3'
             value={theme}
-            className='cursor-pointer rounded-full h-3'
+            className='cursor-pointer bg-transparent w-12'
             onChange={e => setTheme(e.target.value)}
           > 
           </input>
