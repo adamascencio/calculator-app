@@ -105,7 +105,7 @@ export default function App() {
 
   return (
     <div className='flex bg-teal-400 w-screen h-screen'>
-      <div id='calc' className='bg-main w-3/6 m-auto px-3 py-4 flex flex-col gap-y-4 max-w-sm rounded-lg min-w-fit'>
+      <div id='calc' className='bg-main w-3/6 m-auto px-3 py-4 flex flex-col gap-y-4 max-w-sm rounded-lg min-w-fit relative'>
         <Header />
         <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-2 font-bold text-4xl'>
           <span>{currentOperand ? formatOperand(currentOperand) : '0'}</span>
