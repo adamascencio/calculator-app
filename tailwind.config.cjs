@@ -23,7 +23,10 @@ module.exports = {
         white: 'hsl(0, 0%, 100%)',
       },
       fontSize: {
-        keySize: 'clamp(1rem, 1.5vw, 1.5rem)',
+        keySize: 'clamp(1rem, 6vw, 2rem)',
+      },
+      gridTemplateRows: {
+        calcRows: 'auto auto 1fr'
       }
     },
   },
