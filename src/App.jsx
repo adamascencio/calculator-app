@@ -104,7 +104,7 @@ export default function App() {
   const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(calcReducer, {})
 
   return (
-    <div id='calc' className='bg-main h-screen px-6 py-8 grid grid-rows-calcRows gap-y-7 min-w-fit relative'>
+    <div id='calc' className='bg-main h-screen px-6 py-8 grid auto-rows-min gap-y-7 items-start relative'>
       <Header />
       <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-8 font-bold text-5xl'>
         <span>{currentOperand ? formatOperand(currentOperand) : '0'}</span>

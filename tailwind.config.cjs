@@ -25,9 +25,6 @@ module.exports = {
       fontSize: {
         keySize: 'clamp(1rem, 6vw, 2rem)',
       },
-      gridTemplateRows: {
-        calcRows: 'auto auto 1fr'
-      }
     },
   },
   plugins: [],
