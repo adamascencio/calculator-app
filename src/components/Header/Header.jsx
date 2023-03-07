@@ -6,7 +6,7 @@ export default function Header () {
   return (
     <header className='flex justify-between items-center'>
       <h1 className='font-bold text-2xl'>calc</h1>
-      <div className='absolute flex gap-2.5 right-9 top-4 text-xs font-bold'>
+      <div className='absolute flex gap-3 right-9 top-3 text-sm font-bold'>
         <span>1</span>
         <span>2</span>
         <span>3</span>
@@ -19,7 +19,7 @@ export default function Header () {
             min='1'
             max='3'
             value={theme}
-            className='cursor-pointer bg-transparent w-12'
+            className='cursor-pointer bg-transparent w-14'
             onChange={e => setTheme(e.target.value)}
           > 
           </input>
