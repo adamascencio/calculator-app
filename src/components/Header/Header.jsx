@@ -4,9 +4,9 @@ export default function Header () {
   const [theme, setTheme] = useState('1');
 
   return (
-    <header className='flex justify-between items-center'>
+    <header className='flex justify-between items-center relative'>
       <h1 className='font-bold text-2xl'>calc</h1>
-      <div className='absolute flex gap-4 right-10 top-3 text-sm font-bold'>
+      <div className='flex gap-4 right-4 -top-5 text-sm font-bold absolute'>
         <span>1</span>
         <span>2</span>
         <span>3</span>
