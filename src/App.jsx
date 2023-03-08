@@ -104,30 +104,32 @@ export default function App() {
   const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(calcReducer, {})
 
   return (
-    <div id='calc' className='bg-main h-screen px-6 py-8 grid auto-rows-min gap-y-7 items-start relative'>
-      <Header />
-      <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-8 font-bold text-5xl'>
-        <span>{currentOperand ? formatOperand(currentOperand) : '0'}</span>
-      </div>
-      <div id='keypad' className='grid grid-cols-4 text-keySize text-black font-bold justify-items-stretch gap-4 bg-keypad p-4 rounded-lg'>
-        <DigitButton digit='7' dispatch={dispatch} />
-        <DigitButton digit='8' dispatch={dispatch} />
-        <DigitButton digit='9' dispatch={dispatch} />
-        <button onClick={() => dispatch({ type: ACTIONS.DELETE })} className='bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>DEL</button>
-        <DigitButton digit='4' dispatch={dispatch} />
-        <DigitButton digit='5' dispatch={dispatch} />
-        <DigitButton digit='6' dispatch={dispatch} />
-        <OperationButton operation='+' dispatch={dispatch} />
-        <DigitButton digit='1' dispatch={dispatch} />
-        <DigitButton digit='2' dispatch={dispatch} />
-        <DigitButton digit='3' dispatch={dispatch} />
-        <OperationButton operation='-' dispatch={dispatch} />
-        <DigitButton digit='.' dispatch={dispatch} />
-        <DigitButton digit='0' dispatch={dispatch} />
-        <OperationButton operation='/' dispatch={dispatch} />
-        <OperationButton operation='*' dispatch={dispatch} />
-        <button onClick={() => dispatch({ type: ACTIONS.CLEAR })} className='col-span-2 bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>RESET</button>
-        <button onClick={() => dispatch({ type: ACTIONS.EVALUATE })} className='col-span-2 bg-keyRed text-white py-2 rounded-md shadow shadow-keyShadow'>=</button>
+    <div id='calc' className='bg-main h-screen px-6'>
+      <div className='grid auto-rows-min content-center gap-y-7 relative max-w-lg m-auto h-screen'>
+        <Header />
+        <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-8 font-bold text-5xl'>
+          <span>{currentOperand ? formatOperand(currentOperand) : '0'}</span>
+        </div>
+        <div id='keypad' className='grid grid-cols-4 text-keySize text-black font-bold justify-items-stretch gap-4 bg-keypad p-4 rounded-lg'>
+          <DigitButton digit='7' dispatch={dispatch} />
+          <DigitButton digit='8' dispatch={dispatch} />
+          <DigitButton digit='9' dispatch={dispatch} />
+          <button onClick={() => dispatch({ type: ACTIONS.DELETE })} className='bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>DEL</button>
+          <DigitButton digit='4' dispatch={dispatch} />
+          <DigitButton digit='5' dispatch={dispatch} />
+          <DigitButton digit='6' dispatch={dispatch} />
+          <OperationButton operation='+' dispatch={dispatch} />
+          <DigitButton digit='1' dispatch={dispatch} />
+          <DigitButton digit='2' dispatch={dispatch} />
+          <DigitButton digit='3' dispatch={dispatch} />
+          <OperationButton operation='-' dispatch={dispatch} />
+          <DigitButton digit='.' dispatch={dispatch} />
+          <DigitButton digit='0' dispatch={dispatch} />
+          <OperationButton operation='/' dispatch={dispatch} />
+          <OperationButton operation='*' dispatch={dispatch} />
+          <button onClick={() => dispatch({ type: ACTIONS.CLEAR })} className='col-span-2 bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>RESET</button>
+          <button onClick={() => dispatch({ type: ACTIONS.EVALUATE })} className='col-span-2 bg-keyRed text-white py-2 rounded-md shadow shadow-keyShadow'>=</button>
+        </div>
       </div>
     </div>
   );
