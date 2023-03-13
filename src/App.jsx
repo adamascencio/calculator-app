@@ -105,7 +105,7 @@ export default function App() {
 
   return (
     <div id='calc' className='bg-main h-screen px-6'>
-      <div className='grid auto-rows-min content-center gap-y-7 max-w-lg m-auto h-screen'>
+      <div className='grid auto-rows-min max-[640px]:pt-10 md:content-center gap-y-7 max-w-lg m-auto h-screen'>
         <Header />
         <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-8 font-bold text-5xl'>
           <span>{currentOperand ? formatOperand(currentOperand) : '0'}</span>
