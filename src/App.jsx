@@ -95,6 +95,9 @@ const INT_FORMATTER = new Intl.NumberFormat('en-US', {
 
 function formatOperand(operand) {
   if (!operand) return 
+  if (operand.length > 11) {
+    operand = operand.slice(0, 11);
+  }
   const [int, dec] = operand.split('.');
   return dec ? `${INT_FORMATTER.format(int)}.${dec}` : INT_FORMATTER.format(int);
 }
@@ -107,7 +110,7 @@ export default function App() {
     <div id='calc' className='bg-main h-screen px-6'>
       <div className='grid auto-rows-min max-[640px]:pt-10 md:content-center gap-y-7 max-w-lg m-auto h-screen'>
         <Header />
-        <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-8 font-bold text-5xl'>
+        <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-8 font-bold text-4xl'>
           <span>{currentOperand ? formatOperand(currentOperand) : '0'}</span>
         </div>
         <div id='keypad' className='grid grid-cols-4 text-keySize text-black font-bold justify-items-stretch gap-4 bg-keypad p-4 rounded-lg'>
