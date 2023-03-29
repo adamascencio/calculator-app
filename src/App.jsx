@@ -108,17 +108,17 @@ export default function App() {
   const [theme, setTheme] = useState('1');
 
   return (
-    <div id='calc' className='bg-main h-screen px-6'>
+    <div id='calc' className={`bg-mainBg h-screen px-6 theme${theme}`}>
       <div className='grid auto-rows-min max-[640px]:pt-10 md:content-center gap-y-7 max-w-lg m-auto h-screen'>
         <Header theme={theme} setTheme={setTheme} />
-        <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-8 font-bold text-4xl'>
+        <div id='num-display' className='bg-keypadBg rounded-lg text-right px-8 py-8 font-bold text-4xl'>
           <span>{currentOperand ? formatOperand(currentOperand) : '0'}</span>
         </div>
-        <div id='keypad' className='grid grid-cols-4 text-keySize text-black font-bold justify-items-stretch gap-4 bg-keypad p-4 rounded-lg'>
+        <div id='keypad' className='grid grid-cols-4 text-keySize text-black font-bold justify-items-stretch gap-4 bg-keypadBg p-4 rounded-lg'>
           <DigitButton digit='7' dispatch={dispatch} />
           <DigitButton digit='8' dispatch={dispatch} />
           <DigitButton digit='9' dispatch={dispatch} />
-          <button onClick={() => dispatch({ type: ACTIONS.DELETE })} className='bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>DEL</button>
+          <button onClick={() => dispatch({ type: ACTIONS.DELETE })} className='bg-delResetKeys text-white py-2 rounded-md shadow shadow-keyShadow '>DEL</button>
           <DigitButton digit='4' dispatch={dispatch} />
           <DigitButton digit='5' dispatch={dispatch} />
           <DigitButton digit='6' dispatch={dispatch} />
@@ -131,8 +131,8 @@ export default function App() {
           <DigitButton digit='0' dispatch={dispatch} />
           <OperationButton operation='/' dispatch={dispatch} />
           <OperationButton operation='*' dispatch={dispatch} />
-          <button onClick={() => dispatch({ type: ACTIONS.CLEAR })} className='col-span-2 bg-keyBg text-white py-2 rounded-md shadow shadow-keyShadow '>RESET</button>
-          <button onClick={() => dispatch({ type: ACTIONS.EVALUATE })} className='col-span-2 bg-keyRed text-white py-2 rounded-md shadow shadow-keyShadow'>=</button>
+          <button onClick={() => dispatch({ type: ACTIONS.CLEAR })} className='col-span-2 bg-delResetKeys text-white py-2 rounded-md shadow shadow-keyShadow '>RESET</button>
+          <button onClick={() => dispatch({ type: ACTIONS.EVALUATE })} className='col-span-2 bg-equalsKey text-white py-2 rounded-md shadow shadow-keyShadow'>=</button>
         </div>
       </div>
     </div>

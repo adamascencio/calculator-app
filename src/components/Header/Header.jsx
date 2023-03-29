@@ -10,7 +10,7 @@ export default function Header ({ theme, setTheme }) {
       </div>
       <div id="theme-selector" className='flex gap-4 items-center'>
         <h2 className='font-bold ml-12'>Theme</h2>
-        <div className='flex bg-keypad px-2 py-1 rounded-lg w-17'>
+        <div className='flex bg-keypadBg px-2 py-1 rounded-lg w-17'>
           <input 
             type='range'
             min='1'
