@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --bg-main1: hsl(222, 26%, 31%);
+    --bg-keypad1: hsl(223, 31%, 20%);
+    --bg-screen1: hsl(224, 36%, 15%);
+    --bg-delResetKeys1: hsl(225, 21%, 49%);
+    --bg-keys1: hsl(30, 25%, 89%); 
+    --keyShadow1: hsl(224, 28%, 35%);
+    --equalsKey1: hsl(6, 63%, 50%);
+    --bg-main2: hsl(0, 0%, 90%);
+    --bg-keypad2: hsl(0, 5%, 81%);
+    --bg-screen2: hsl(0, 0%, 93%);
+    --bg-delResetKeys2: hsl(185, 42%, 37%);
+    --bg-keys2: hsl(45, 7%, 89%);
+    --keyShadow2: hsl(35, 11%, 61%);
+    --equalsKey2: hsl(25, 98%, 40%);
+    --bg-main3: hsl(268, 75%, 9%);
+    --bg-keypad3: hsl(268, 71%, 12%);
+    --bg-screen3: hsl(268, 71%, 12%);
+    --bg-delResetKeys3: hsl(281, 89%, 26%);
+    --bg-keys3: hsl(268, 47%, 21%);
+    --keyShadow3: hsl(290, 70%, 36%);
+    --equalsKey3: hsl(176, 100%, 44%);
+  }
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,6 +38,36 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.theme1 {
+  --bg-main: var(--bg-main1);
+  --bg-keypad: var(--bg-keypad1);
+  --bg-screen: var(--bg-screen1);
+  --bg-delResetKeys: var(--bg-delResetKeys1);
+  --bg-keys: var(--bg-keys1); 
+  --keyShadow: var(--keyShadow1);
+  --equalsKey: var(--equalsKey1);
+}
+
+.theme2 {
+  --bg-main: var(--bg-main2);
+  --bg-keypad: var(--bg-keypad2);
+  --bg-screen: var(--bg-screen2);
+  --bg-delResetKeys: var(--bg-delResetKeys2);
+  --bg-keys: var(--bg-keys2); 
+  --keyShadow: var(--keyShadow2);
+  --equalsKey: var(--equalsKey2);
+}
+
+.theme3 {
+  --bg-main: var(--bg-main3);
+  --bg-keypad: var(--bg-keypad3);
+  --bg-screen: var(--bg-screen3);
+  --bg-delResetKeys: var(--bg-delResetKeys3);
+  --bg-keys: var(--bg-keys3); 
+  --keyShadow: var(--keyShadow3);
+  --equalsKey: var(--equalsKey3);
 }
 
 * {
