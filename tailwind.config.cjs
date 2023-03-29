@@ -7,6 +7,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        mainBg: 'var(--bg-main)',
+        keypadBg: 'var(--bg-keypad)',
+        screen: 'var(--bg-screen)',
+        delResetKeys: 'var(--bg-delResetKeys)',
+        keys: 'var(--bg-keys)',
+        keyShadow: 'var(--keyShadow)',
+        equalsKey: 'var(--equalsKey)',
         // backgrounds
         main: 'hsl(222, 26%, 31%)',
         keypad: 'hsl(223, 31%, 20%)',
