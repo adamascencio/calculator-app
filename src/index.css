@@ -11,6 +11,8 @@
     --bg-keys1: hsl(30, 25%, 89%); 
     --keyShadow1: hsl(224, 28%, 35%);
     --equalsKey1: hsl(6, 63%, 50%);
+    --color-text1: hsl(0, 0%, 100%);
+    --color-opKeys1: hsl(221, 14%, 31%);
     --bg-main2: hsl(0, 0%, 90%);
     --bg-keypad2: hsl(0, 5%, 81%);
     --bg-screen2: hsl(0, 0%, 93%);
@@ -18,6 +20,8 @@
     --bg-keys2: hsl(45, 7%, 89%);
     --keyShadow2: hsl(35, 11%, 61%);
     --equalsKey2: hsl(25, 98%, 40%);
+    --color-text2: hsl(60, 10%, 19%);
+    --color-opKeys2: hsl(60%, 10%, 19%);
     --bg-main3: hsl(268, 75%, 9%);
     --bg-keypad3: hsl(268, 71%, 12%);
     --bg-screen3: hsl(268, 71%, 12%);
@@ -25,6 +29,8 @@
     --bg-keys3: hsl(268, 47%, 21%);
     --keyShadow3: hsl(290, 70%, 36%);
     --equalsKey3: hsl(176, 100%, 44%);
+    --color-text3: hsl(52, 100%, 62%);
+    --color-opKeys3: hsl(52, 100%, 62%)
   }
 }
 
@@ -48,6 +54,8 @@
   --bg-keys: var(--bg-keys1); 
   --keyShadow: var(--keyShadow1);
   --equalsKey: var(--equalsKey1);
+  --textColor: var(--color-text1);
+  --opKeyColor: var(--color-opKeys1);
 }
 
 .theme2 {
@@ -58,6 +66,8 @@
   --bg-keys: var(--bg-keys2); 
   --keyShadow: var(--keyShadow2);
   --equalsKey: var(--equalsKey2);
+  --textColor: var(--color-text2);
+  --opKeyColor: var(--color-opKeys2);
 }
 
 .theme3 {
@@ -68,6 +78,8 @@
   --bg-keys: var(--bg-keys3); 
   --keyShadow: var(--keyShadow3);
   --equalsKey: var(--equalsKey3);
+  --textColor: var(--color-text3);
+  --opKeyColor: var(--color-opKeys3);
 }
 
 * {

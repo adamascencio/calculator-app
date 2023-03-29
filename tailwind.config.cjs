@@ -14,6 +14,8 @@ module.exports = {
         keys: 'var(--bg-keys)',
         keyShadow: 'var(--keyShadow)',
         equalsKey: 'var(--equalsKey)',
+        textColor: 'var(--textColor)',
+        opKeyColor: 'var(--opKeyColor)',
         // backgrounds
         main: 'hsl(222, 26%, 31%)',
         keypad: 'hsl(223, 31%, 20%)',
