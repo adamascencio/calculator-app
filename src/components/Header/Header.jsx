@@ -1,7 +1,4 @@
-import { useState } from 'react';
-
-export default function Header () {
-  const [theme, setTheme] = useState('1');
+export default function Header ({ theme, setTheme }) {
 
   return (
     <header className='flex justify-between items-center relative'>

@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useState, useReducer } from 'react'
 import Header from './components/Header/Header'
 import DigitButton from './components/DigitButton/DigitButton'
 import OperationButton from './components/OperationButton/OperationButton'
@@ -105,11 +105,12 @@ function formatOperand(operand) {
 export default function App() {
   // state
   const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(calcReducer, {})
+  const [theme, setTheme] = useState('1');
 
   return (
     <div id='calc' className='bg-main h-screen px-6'>
       <div className='grid auto-rows-min max-[640px]:pt-10 md:content-center gap-y-7 max-w-lg m-auto h-screen'>
-        <Header />
+        <Header theme={theme} setTheme={setTheme} />
         <div id='num-display' className='bg-keypad rounded-lg text-right px-8 py-8 font-bold text-4xl'>
           <span>{currentOperand ? formatOperand(currentOperand) : '0'}</span>
         </div>
