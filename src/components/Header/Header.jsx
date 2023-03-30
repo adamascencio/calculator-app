@@ -2,7 +2,7 @@ export default function Header ({ theme, setTheme }) {
 
   return (
     <header className='flex justify-between items-center relative'>
-      <h1 className='font-bold text-2xl'>calc</h1>
+      <h1 className='font-bold text-4xl'>calc</h1>
       <div className='flex gap-4 right-4 -top-5 text-sm font-bold absolute'>
         <span>1</span>
         <span>2</span>
