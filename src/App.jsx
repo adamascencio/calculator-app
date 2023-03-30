@@ -16,7 +16,7 @@ function calcReducer(state, { type, payload }) {
   switch (type) {
     case 'add-digit':
       if (payload.digit === '0' && state.currentOperand === '0') return state
-      if (payload.digit === '.' && state.currentOperand.includes('.')) return state
+      if (payload.digit === '.' && state.currentOperand && state.currentOperand.includes('.')) return state
       if (state.overwrite) {
         return {
           currentOperand: payload.digit,
