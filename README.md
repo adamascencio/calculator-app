@@ -6,7 +6,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -29,17 +29,12 @@ Users should be able to:
 - Adjust the color theme based on their preference
 - **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
-### Screenshot
+### Screenshots
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Mobile Theme 1](screenshots/mobile.png)
+![Mobile Theme 2](screenshots/mobile_theme2.png)
+![Mobile Theme 3](screenshots/mobile_theme3.png)
+![Desktop](screenshots/desktop.png)
 
 ### Links
 
