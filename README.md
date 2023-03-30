@@ -51,9 +51,11 @@ By using the **useReducer** React hook to build a calculator app, I learned how 
 
 I also learned how to create custom color classes using the **extend** feature and how to modify the default color palette to suit my needs. With this knowledge, I was able to create three color themes that users could select from. I used a range input to allow users to switch between the three themes.
 
+**app.jsx**
 ```js
 const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(calcReducer, {})
 ```
+**index.css**
 ```css
 .theme1 {
   --bg-main: var(--bg-main1);
@@ -89,6 +91,7 @@ const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(ca
   --opKeyColor: var(--color-opKeys3);
 }
 ```
+**Tailwind Config**
 ```cjs
 theme: {
     extend: {
